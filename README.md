@@ -13,4 +13,4 @@ When you open `https://news.ycombinator.com/from?site=github.com`, then it will 
 
 ## Chrome extension store
 
-[Download link](https://chrome.google.com/webstore/detail/cip/oacpifbefgeacllmohgglfjmgchadkjh)
+[Download link](https://chrome.google.com/webstore/detail/hacker-tag/ojjoklejkpmlohnhelpnkbmbbjllagla)
