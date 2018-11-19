@@ -4,7 +4,6 @@
 
 'use strict';
 
-const xhr = new XMLHttpRequest();
 
 function getPath(href) {
   const url = new URL(href);
@@ -12,11 +11,11 @@ function getPath(href) {
 }
 
 function getLanguages (path, cb) {
+  const xhr = new XMLHttpRequest();
   const url = 'https://api.github.com/repos/' + path + '/languages';
   xhr.addEventListener('load', function () {
-    if (this.responseText) {
-      console.log(this.responseText);
-      const result = JSON.parse(this.responseText);
+    if (xhr.responseText) {
+      const result = JSON.parse(xhr.responseText);
       cb(Object.keys(result)[0])
     }
   });
@@ -26,7 +25,7 @@ function getLanguages (path, cb) {
 
 function update() {
   const lists = document.getElementsByClassName('storylink');
-  const testLists = Array.prototype.slice.call(lists, 0, 1);
+  const testLists = Array.prototype.slice.call(lists, 0, 4);
   Array.prototype.map.call(lists, function (l) {
     const path = getPath(l.href);
     getLanguages(path,language => {
