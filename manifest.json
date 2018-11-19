@@ -1,0 +1,27 @@
+{
+  "name": "Hacker-Tag",
+  "version": "1.0",
+  "description": "show hacker news with github language tag",
+  "permissions": ["activeTab", "declarativeContent", "storage", "https://api.github.com/*"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "images/hackernews.png"
+  },
+  "icons": {
+    "64": "images/hackernews.png"
+  },
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [
+        "https://news.ycombinator.com/from?site=github.com*"
+      ],
+      "js": ["index.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}
